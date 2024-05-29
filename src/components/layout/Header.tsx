@@ -1,45 +1,46 @@
 'use client';
 import { useState } from 'react';
 import './Example.css'; // CSS 스타일은 파일에 포함되어 있어야 합니다.
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname(); // 현재 경로를 얻습니다.
 
   return (
-    <nav className="fixed top-0 z-[100] w-full flex-shrink bg-white shadow-soft-shadow backdrop-blur-lg border-b border-[#E6E8EB]">
+    <nav className="fixed top-0 z-[100] w-full flex-shrink bg-white  border-b border-[#E6E8EB]">
       <div className="mx-auto flex max-w-full items-center justify-between p-[16px] lg:p-6 lg:pl-40 lg:pr-20">
         <div className="flex gap-12 lg:flex-1 lg:justify-end">
           <>
             <Link
               href="/"
-              className="hidden font-medium leading-5 text-[#191F28] lg:flex"
+              className={`hidden font-medium leading-5 lg:flex ${pathname === '/' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
             >
               홈
             </Link>
             <Link
-              href=""
-              className="hidden font-medium leading-5 text-[#191F28] lg:flex"
+              href="/A"
+              className={`hidden font-medium leading-5 lg:flex ${pathname === '/A' || pathname === '/A/1' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
             >
               인간혼동방지
             </Link>
             <Link
-              href="/"
-              className="hidden font-medium leading-5 text-[#191F28] lg:flex"
+              href="/B"
+              className={`hidden font-medium leading-5 lg:flex ${pathname === '/B' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
             >
               성적학대방지
             </Link>
             <Link
-              href="/"
-              className="hidden font-medium leading-5 text-[#191F28] lg:flex"
+              href="/C"
+              className={`hidden font-medium leading-5 lg:flex ${pathname === '/C' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
             >
               시간중독방지
             </Link>
             <Link
-              href="/"
-              className="hidden font-medium leading-5 text-[#191F28] lg:flex"
+              href="/D"
+              className={`hidden font-medium leading-5 lg:flex ${pathname === '/D' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
             >
               주체성확대
             </Link>

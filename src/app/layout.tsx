@@ -8,11 +8,11 @@ import Footer from '@/components/layout/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Netflix',
-  description: 'Netflix clone coding',
-  icons: {
-    icon: '/logo.png',
-  },
+  title: '기업디',
+  description: '기업디web',
+  // icons: {
+  //   icon: '/logo.png',
+  // },
 };
 const pretendard = localFont({
   src: '../lib/fonts/PretendardVariable.woff2',
@@ -31,7 +31,6 @@ export default function RootLayout({
       <body className={pretendard.className}>
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );
