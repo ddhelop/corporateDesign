@@ -53,13 +53,13 @@ export default function A2Component() {
       </div>
 
       {/* 중앙 */}
-      <div className="w-full flex justify-center h-full">
-        <div className="w-[62%] h-[68%] flex flex-col justify-end items-end relative">
+      <div className="w-full flex justify-center h-full items-start">
+        <div className="w-[52rem] h-full pb-[12rem] flex flex-col justify-end items-end relative">
           {/* chat1 */}
           <motion.div
             initial={{ y: 0 }}
             animate={{
-              y: showSecondChat ? -200 : showAnswer ? -105 : 0,
+              y: showSecondChat ? '-12.3rem' : showAnswer ? '-6.5625rem' : 0,
             }} // 105px 또는 210px 위로 이동
             transition={{ duration: 0.5 }}
           >
@@ -74,9 +74,9 @@ export default function A2Component() {
           {showAnswer && (
             <motion.div
               initial={{ opacity: 0, y: 0 }}
-              animate={{ opacity: 1, y: showSecondChat ? -95 : 0 }}
+              animate={{ opacity: 1, y: showSecondChat ? '-5.4rem' : 0 }}
               transition={{ duration: 0.5 }}
-              className="absolute bottom-0 left-0"
+              className="absolute bottom-[12rem] left-0"
             >
               <Image
                 src={'/image/chat1answer.png'}
@@ -92,7 +92,7 @@ export default function A2Component() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="absolute bottom-0 right-0"
+              className="absolute bottom-[12rem] right-0"
             >
               <Image
                 src={'/image/chat2.png'}
