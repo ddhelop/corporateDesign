@@ -20,7 +20,7 @@ export default function Input() {
   };
 
   return (
-    <div className="w-full flex justify-center h-[12.25rem]">
+    <div className="w-full flex justify-center">
       <form
         onSubmit={onClickSubmit}
         className="absolute bottom-[6.31rem] flex w-[53.18rem] h-[4.25rem] shadow-blue-shadow rounded-[1.2rem] justify-between pr-3 pl-8 mt-44"
