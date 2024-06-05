@@ -18,6 +18,24 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide'),
+    function ({ addUtilities }: any) {
+      addUtilities({
+        '.gradient-overlay': {
+          position: 'sticky',
+          top: '0',
+          left: '0',
+          width: '100%',
+          height: '50px',
+          background:
+            'linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0) 100%)',
+          pointerEvents: 'none',
+          zIndex: '10', // 필요시 추가하여 다른 요소보다 위에 표시
+        },
+      });
+    },
+  ],
 };
+
 export default config;
