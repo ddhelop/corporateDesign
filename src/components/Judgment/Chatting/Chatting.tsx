@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import Input from '@/components/commons/Input';
 import Image from 'next/image';
 import MyChat from './MyChat';
@@ -12,6 +13,7 @@ const Chatting = () => {
   const [visibleChats, setVisibleChats] = useState<Chat[]>([]);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const latestChatRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const timers: NodeJS.Timeout[] = [];
@@ -20,6 +22,9 @@ const Chatting = () => {
         setVisibleChats((prev) => [...prev, chat]);
         if (index === chatData.length - 1) {
           setActiveChat(true);
+          setTimeout(() => {
+            router.push('/judgment/chat/2');
+          }, 2000); // 2초 후 라우팅
         }
       }, index * 2000);
       timers.push(timer);
@@ -28,7 +33,7 @@ const Chatting = () => {
     return () => {
       timers.forEach(clearTimeout);
     };
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     if (latestChatRef.current) {
@@ -63,7 +68,11 @@ const Chatting = () => {
       </div>
 
       {activeChat ? (
-        <Input />
+        <Input
+          message={
+            '그런 당연한 말 말고 내가 어떻게 해야 이 돈을 되찾을 수 있냐고'
+          }
+        />
       ) : (
         <div className="absolute bottom-[6.31rem] flex w-full justify-center z-10">
           <Image
