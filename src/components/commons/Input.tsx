@@ -20,10 +20,10 @@ export default function Input() {
   };
 
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex justify-center z-10">
       <form
         onSubmit={onClickSubmit}
-        className="absolute bottom-[6.31rem] flex w-[53.18rem] h-[4.25rem] shadow-blue-shadow rounded-[1.2rem] justify-between pr-3 pl-8 mt-44"
+        className="absolute bottom-[6.31rem] bg-white flex w-[53.18rem] h-[4.25rem] shadow-blue-shadow rounded-[1.2rem] justify-between pr-3 pl-8 mt-44 z-10"
       >
         <Image src={'/image/stick.svg'} width={4} height={21} alt="Rectangle" />
         <input
