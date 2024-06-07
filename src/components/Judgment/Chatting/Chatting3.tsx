@@ -76,10 +76,6 @@ const Chatting3 = () => {
           { id: Date.now() + 1, isMyChat: false, message: <ChatWarning /> },
         ]);
       }, 2000);
-
-      setTimeout(() => {
-        router.push('/judgment/chat/3');
-      }, 7000);
     }
   };
 
@@ -89,7 +85,9 @@ const Chatting3 = () => {
       ...prev,
       { id: Date.now(), isMyChat: false, message: '좋은 생각이에요!' },
     ]);
-    setActiveChat(true);
+    setTimeout(() => {
+      router.push('/judgment/chat/4');
+    }, 1000);
   };
 
   return (
