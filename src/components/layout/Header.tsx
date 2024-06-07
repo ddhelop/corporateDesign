@@ -10,8 +10,25 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname(); // 현재 경로를 얻습니다.
 
+  // 특정 경로에 따라 스타일을 변경하는 조건부 클래스
+  const isJudgmentChat = pathname === '/judgment/chat/5';
+  const navClass = isJudgmentChat
+    ? 'fixed top-0 z-[100] w-full flex-shrink bg-[#191F28] text-white border-b border-[#E6E8EB]'
+    : 'fixed top-0 z-[100] w-full flex-shrink bg-white text-black border-b border-[#E6E8EB]';
+
+  const linkClass = (path: string) =>
+    `hidden font-medium leading-5 lg:flex ${
+      pathname === path
+        ? isJudgmentChat
+          ? 'text-white'
+          : 'text-[#519CE3]'
+        : isJudgmentChat
+          ? 'text-white'
+          : 'text-[#191F28]'
+    }`;
+
   return (
-    <nav className="fixed top-0 z-[100] w-full flex-shrink bg-white  border-b border-[#E6E8EB]">
+    <nav className={navClass}>
       <div className="mx-auto flex max-w-full items-center justify-between p-4 pr-[2.5rem]">
         <div className="flex lg:flex-1 lg:justify-between ">
           <>
@@ -24,34 +41,19 @@ export default function Header() {
               />
             </div>
             <div className="flex gap-12 justify-center items-center">
-              <Link
-                href="/"
-                className={`hidden font-medium leading-5 lg:flex ${pathname === '/' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
-              >
+              <Link href="/" className={linkClass('/')}>
                 주체적 판단 능력 상실
               </Link>
-              <Link
-                href="/A"
-                className={`hidden font-medium leading-5 lg:flex ${pathname === '/A' || pathname === '/A/1' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
-              >
+              <Link href="/A" className={linkClass('/A')}>
                 사회성 결여
               </Link>
-              <Link
-                href="/B"
-                className={`hidden font-medium leading-5 lg:flex ${pathname === '/B' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
-              >
+              <Link href="/B" className={linkClass('/B')}>
                 시간적 중독
               </Link>
-              <Link
-                href="/C"
-                className={`hidden font-medium leading-5 lg:flex ${pathname === '/C' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
-              >
+              <Link href="/C" className={linkClass('/C')}>
                 성적 도구화 및 학대
               </Link>
-              <Link
-                href="/D"
-                className={`hidden font-medium leading-5 lg:flex ${pathname === '/D' ? 'text-[#519CE3]' : 'text-[#191F28]'}`}
-              >
+              <Link href="/D" className={linkClass('/D')}>
                 현실 가상 구분 능력 상실
               </Link>
             </div>
