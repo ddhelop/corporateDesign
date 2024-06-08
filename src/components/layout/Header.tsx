@@ -8,23 +8,14 @@ import Image from 'next/image';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const pathname = usePathname(); // 현재 경로를 얻습니다.
 
   // 특정 경로에 따라 스타일을 변경하는 조건부 클래스
-  const isJudgmentChat = pathname === '/judgment/chat/5';
-  const navClass = isJudgmentChat
-    ? 'fixed top-0 z-[100] w-full flex-shrink bg-[#191F28] text-white border-b border-[#E6E8EB]'
-    : 'fixed top-0 z-[100] w-full flex-shrink bg-white text-black border-b border-[#E6E8EB]';
+  const navClass =
+    'fixed top-0 z-[100] w-full flex-shrink bg-white text-black border-b border-[#E6E8EB]';
 
   const linkClass = (path: string) =>
     `hidden font-medium leading-5 lg:flex ${
-      pathname === path
-        ? isJudgmentChat
-          ? 'text-white'
-          : 'text-[#519CE3]'
-        : isJudgmentChat
-          ? 'text-white'
-          : 'text-[#191F28]'
+      path === '/' ? 'text-[#519CE3]' : 'text-[#191F28]'
     }`;
 
   return (
@@ -32,14 +23,14 @@ export default function Header() {
       <div className="mx-auto flex max-w-full items-center justify-between p-4 pr-[2.5rem]">
         <div className="flex lg:flex-1 lg:justify-between ">
           <>
-            <div>
+            <Link href={'/'}>
               <Image
                 src={'/icons/logo.svg'}
                 alt="logo"
                 width={153}
                 height={30}
               />
-            </div>
+            </Link>
             <div className="flex gap-12 justify-center items-center">
               <Link href="/" className={linkClass('/')}>
                 주체적 판단 능력 상실
