@@ -17,7 +17,7 @@ const Input2: React.FC<InputProps> = ({ message, onNewChat }) => {
     if (inputValue === targetText) {
       onNewChat(inputValue);
     } else {
-      alert(message);
+      alert(message + '라고 정확하게 입력해주세요');
     }
   };
 

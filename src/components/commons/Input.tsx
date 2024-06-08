@@ -13,9 +13,9 @@ export default function Input({ message }: { message: string }) {
 
     const targetText = message;
     if (inputValue === targetText) {
-      router.push('/A/1');
+      router.push('/judgment/chat');
     } else {
-      alert(message);
+      alert(message + '라고 정확하게 입력해주세요');
     }
   };
 
