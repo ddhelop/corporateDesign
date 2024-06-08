@@ -8,14 +8,17 @@ import Image from 'next/image';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname(); // 현재 경로를 얻습니다.
 
   // 특정 경로에 따라 스타일을 변경하는 조건부 클래스
-  const navClass =
-    'fixed top-0 z-[100] w-full flex-shrink bg-white text-black border-b border-[#E6E8EB]';
+  const isJudgmentChat = pathname === '/judgment/chat/5';
+  const navClass = isJudgmentChat
+    ? 'fixed top-0 z-[100] w-full flex-shrink bg-[#191F28] text-[#fff] border-b border-[#E6E8EB]'
+    : 'fixed top-0 z-[100] w-full flex-shrink bg-white text-black border-b border-[#E6E8EB]';
 
   const linkClass = (path: string) =>
     `hidden font-medium leading-5 lg:flex ${
-      path === '/' ? 'text-[#519CE3]' : 'text-[#191F28]'
+      path === '/' ? 'text-[#519CE3]' : ''
     }`;
 
   return (
