@@ -81,10 +81,10 @@ const Chatting3 = () => {
 
   const handleButtonClick = (option: string) => {
     setSelectedButton(option);
-    setAdditionalChats((prev) => [
-      ...prev,
-      { id: Date.now(), isMyChat: false, message: '좋은 생각이에요!' },
-    ]);
+    // setAdditionalChats((prev) => [
+    //   ...prev,
+    //   { id: Date.now(), isMyChat: false, message: '좋은 생각이에요!' },
+    // ]);
     setTimeout(() => {
       router.push('/judgment/chat/4');
     }, 1000);
@@ -124,10 +124,10 @@ const Chatting3 = () => {
                 <button
                   key={option}
                   onClick={() => handleButtonClick(option)}
-                  className={`py-6 px-8 rounded-full border text-lg ${
+                  className={`py-6 px-8 rounded-full border text-2xl ${
                     selectedButton === option
-                      ? 'bg-blue-100 border-blue-500'
-                      : 'border-gray-300 hover:bg-blue-100 hover:border-blue-500'
+                      ? 'bg-blue-100 border-blue-500 text-blue-500 font-bold'
+                      : 'border-gray-300 hover:bg-blue-100 hover:border-blue-500 hover:font-bold hover:text-blue-500'
                   }`}
                 >
                   {option}

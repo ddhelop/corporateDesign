@@ -7,7 +7,7 @@ export default function JudgmentPage() {
       <div className="">
         <Judgment />
       </div>
-      <Input />
+      <Input message="오늘 주식 다 떨어져서 몇천만원을 날렸어..." />
     </div>
   );
 }

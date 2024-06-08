@@ -33,11 +33,6 @@ const Chatting4 = () => {
       isMyChat: false,
       message: '다른 방법을 한번 찾아보는 건 어때요? 제가 같이 고민해줄게요.',
     },
-    {
-      id: Date.now() + 4,
-      isMyChat: false,
-      message: '좋은 생각이에요!',
-    },
   ]);
   const [selectedButton, setSelectedButton] =
     useState<string>('이자율이 높은 적금에 가입한다.');
@@ -86,10 +81,10 @@ const Chatting4 = () => {
           ].map((option, index) => (
             <button
               key={index}
-              className={`py-6 px-8 rounded-full border text-lg ${
+              className={`py-6 px-8 rounded-full border text-2xl  ${
                 selectedButton === option
-                  ? 'bg-blue-100 border-blue-500'
-                  : 'border-gray-300 hover:bg-blue-100 hover:border-blue-500'
+                  ? 'bg-blue-100 border-blue-500 text-blue-500 font-bold'
+                  : 'border-gray-300 hover:bg-blue-100 hover:border-blue-500 hover:font-bold hover:text-blue-500'
               }`}
             >
               {option}

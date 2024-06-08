@@ -238,7 +238,7 @@ const Chatting6 = () => {
               </div>
             </div>
             <button
-              className="w-full mt-10 py-5 rounded-3xl bg-blue-100 text-blue-500 text-[1.75rem]"
+              className="w-full mt-10 py-5 rounded-3xl bg-blue-100 text-blue-500 text-[1.75rem] hover:bg-blue-200 hover:text-blue-600"
               onClick={() => router.push('/')}
             >
               홈으로
