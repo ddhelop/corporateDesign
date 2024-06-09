@@ -41,7 +41,7 @@ export default function Header() {
               <Link href="/A" className={linkClass('/A')}>
                 사회성 결여
               </Link>
-              <Link href="/B" className={linkClass('/B')}>
+              <Link href="B/" className={linkClass('/B')}>
                 시간적 중독
               </Link>
               <Link href="/C" className={linkClass('/C')}>
@@ -62,30 +62,6 @@ export default function Header() {
             {/* 아이콘 추가할 곳 */}
           </button>
         </div>
-      </div>
-      <div
-        className={`mobile-menu transition-max-height absolute w-full duration-500 ease-in-out ${
-          mobileMenuOpen ? 'max-h-96' : 'max-h-0'
-        }`}
-      >
-        <Link
-          href="#"
-          className="block p-4 pl-8 text-sm font-semibold leading-6 text-grey100"
-        >
-          창업/공모전 소개
-        </Link>
-        <Link
-          href="#"
-          className="block p-4 pl-8 text-sm font-semibold leading-6 text-grey100"
-        >
-          팀원 찾기
-        </Link>
-        <Link
-          href="#"
-          className="block p-4 pl-8 text-sm font-semibold leading-6 text-grey100"
-        >
-          팀 찾기
-        </Link>
       </div>
     </nav>
   );
