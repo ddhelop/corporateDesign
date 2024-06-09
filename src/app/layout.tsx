@@ -8,11 +8,11 @@ import Footer from '@/components/layout/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '기업디',
-  description: '기업디web',
-  // icons: {
-  //   icon: '/logo.png',
-  // },
+  title: '주체적 판단능력 저하 유저 케이스 시연',
+  description: '주체적 판단능력 저하 유저 케이스 시연',
+  icons: {
+    icon: '/icons/robot.png',
+  },
 };
 const pretendard = localFont({
   src: '../lib/fonts/PretendardVariable.woff2',
