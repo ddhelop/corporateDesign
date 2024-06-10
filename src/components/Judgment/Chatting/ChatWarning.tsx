@@ -19,7 +19,7 @@ export default function ChatWarning() {
       <div className="flex flex-col rounded-3xl bg-[#FFEEEE] gap-1 pt-6  relative w-[80%]">
         <div className="flex gap-4 pl-[1.75rem]">
           <Image
-            src="/icons/warning.svg"
+            src={'/icons/rewarning.svg'}
             width={34}
             height={34}
             alt="warning"
